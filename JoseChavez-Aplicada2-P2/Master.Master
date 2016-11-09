@@ -6,7 +6,7 @@
 <head runat="server">
     <title></title>
     <link href="/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/toastr.min.css" rel="stylesheet" />
+    <link href="/css/toastr.min.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
