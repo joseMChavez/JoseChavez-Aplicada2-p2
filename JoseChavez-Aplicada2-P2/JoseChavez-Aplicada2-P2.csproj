@@ -70,7 +70,9 @@
     <Content Include="css\toastr.min.css" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery-1.9.1.min.js" />
+    <Content Include="js\jquery-2.2.0.min.js" />
     <Content Include="js\toastr.min.js" />
+    <Content Include="Registro\rParcial2.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -82,6 +84,13 @@
       <DependentUpon>Master.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registro\rParcial2.aspx.cs">
+      <DependentUpon>rParcial2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registro\rParcial2.aspx.designer.cs">
+      <DependentUpon>rParcial2.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Master.Master" />
