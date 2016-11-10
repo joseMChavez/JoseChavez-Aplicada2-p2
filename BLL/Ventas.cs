@@ -20,9 +20,9 @@ namespace BLL
             this.Monto = 0;
             this.Detalle = new List<VentaDetalle>();
         }
-        public void AgregarVenta(int VentaId, int Articuloid,int Cantidad, float precio)
+        public void AgregarVenta( int Articuloid,int Cantidad, float precio)
         {
-            Detalle.Add(new VentaDetalle(VentaId, Articuloid, Cantidad, precio));
+            Detalle.Add(new VentaDetalle( Articuloid, Cantidad, precio));
         }
 
        

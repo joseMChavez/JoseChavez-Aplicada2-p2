@@ -41,10 +41,13 @@ namespace JoseChavez_Aplicada2_P2
         {
             v.Fecha = FechaTextBox.Text;
             v.Monto = Utility.ConvierteFloat(MontoTextBox.Text);
+            float Monto = 0;
             foreach(GridViewRow item in VentaGridView.Rows)
             {
-                v.AgregarVenta(Convert.ToInt32(item.Cells[0]), Convert.ToInt32(item.Cells[1]), Convert.ToInt32(item.Cells[2]), (float)Convert.ToDecimal(item.Cells[3]));
+                v.AgregarVenta( Convert.ToInt32(item.Cells[0]), Convert.ToInt32(item.Cells[1]), (float)Convert.ToDecimal(item.Cells[2]));
+                Monto = (float)Convert.ToDecimal(item.Cells[1]) + (float)Convert.ToDecimal(item.Cells[1]);
             }
+            MontoTextBox.Text = Monto.ToString();
         }
 
         private void Limpiar()
