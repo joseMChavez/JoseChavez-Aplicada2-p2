@@ -62,6 +62,7 @@
     <Content Include="App_Data\Parcial2Db_log.ldf">
       <DependentUpon>Parcial2Db.mdf</DependentUpon>
     </Content>
+    <Content Include="Consultas\cVentas.aspx" />
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.css" />
@@ -73,10 +74,17 @@
     <Content Include="js\jquery-2.2.0.min.js" />
     <Content Include="js\toastr.min.js" />
     <Content Include="Registro\rParcial2.aspx" />
-    <Content Include="rVentas.aspx" />
+    <Content Include="Registro\rVentas.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consultas\cVentas.aspx.cs">
+      <DependentUpon>cVentas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\cVentas.aspx.designer.cs">
+      <DependentUpon>cVentas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Master.Master.cs">
       <DependentUpon>Master.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -97,11 +105,11 @@
     <Compile Include="Registro\rParcial2.aspx.designer.cs">
       <DependentUpon>rParcial2.aspx</DependentUpon>
     </Compile>
-    <Compile Include="rVentas.aspx.cs">
+    <Compile Include="Registro\rVentas.aspx.cs">
       <DependentUpon>rVentas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="rVentas.aspx.designer.cs">
+    <Compile Include="Registro\rVentas.aspx.designer.cs">
       <DependentUpon>rVentas.aspx</DependentUpon>
     </Compile>
   </ItemGroup>

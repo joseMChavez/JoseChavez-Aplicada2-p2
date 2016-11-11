@@ -33,7 +33,7 @@ namespace BLL
             ConexionDb con = new ConexionDb();
             try
             {
-                int.TryParse(con.ObtenerValor(string.Format("Insert into Venta(Fecha,Monto) values('{0}',{1}); SCOPE IDENTITY()", this.Fecha, this.Monto)).ToString(), out Retorno);
+                int.TryParse(con.ObtenerValor(string.Format("Insert into Ventas(Fecha,Monto) values('{0}',{1});select SCOPE_IDENTITY()", this.Fecha, this.Monto)).ToString(), out Retorno);
 
                 foreach (VentaDetalle item in Detalle)
                 {
@@ -82,7 +82,7 @@ namespace BLL
             bool retorno = false;
             try
             {
-                retorno = con.Ejecutar(string.Format("delete from Ventas VentaId = {0};"+"Delete from VentasDetalle where VentaId={0}",this.VentaId));
+                retorno = con.Ejecutar(string.Format("Delete from VentasDetalle where Ventaid={0};"+"delete from Ventas where VentaId = {0}",this.VentaId));
             }
             catch (Exception ex)
             {
@@ -94,12 +94,46 @@ namespace BLL
 
         public override bool Buscar(int IdBuscado)
         {
-            throw new NotImplementedException();
-        }
+            ConexionDb con = new ConexionDb();
+            DataTable dt = new DataTable();
+            DataTable detalle = new DataTable();
+            try
+            {
+                dt = con.ObtenerDatos(string.Format("Select * from Ventas where VentaId={0}", IdBuscado));
+                if (dt.Rows.Count>0)
+                {
+                    this.VentaId = (int)dt.Rows[0]["VentaId"];
+                    this.Monto = (float)Convert.ToDecimal(dt.Rows[0]["Monto"]);
+                    this.Fecha = dt.Rows[0]["Fecha"].ToString();
 
+                    detalle = con.ObtenerDatos(string.Format("Select * from VentasDetalle where Ventaid={0}", this.VentaId));
+                    foreach(DataRow row in detalle.Rows)
+                        AgregarVenta((int)row["ArticuloId"], (int)row["Cantidad"], (float)Convert.ToDecimal(row["Precio"].ToString()));
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            return dt.Rows.Count > 0;
+        }
+        public static DataTable ListadoDos( string Condicion)
+        {
+            DataTable dt = new DataTable();
+            ConexionDb con = new ConexionDb();
+            return dt = con.ObtenerDatos(string.Format("select V.VentaId as Id, V.Monto, VD.ArticuloId,VD.Cantidad, VD.Precio, V.Fecha from Ventas as V inner join VentasDetalle as VD on V.VentaId = VD.Ventaid where " + Condicion));
+        }
         public override DataTable Listado(string Campos, string Condicion, string Orden)
         {
-            throw new NotImplementedException();
+            DataTable dt = new DataTable();
+            ConexionDb con = new ConexionDb();
+            string order = "";
+            if (Orden!="")
+            {
+                order = " order by";
+            }
+            return dt = con.ObtenerDatos(string.Format("Select"+Campos+" from Ventas"+Condicion+order));
         }
     }
 }

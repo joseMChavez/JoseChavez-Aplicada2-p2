@@ -24,13 +24,16 @@ namespace BLL
 
         public override bool Buscar(int IdBuscado)
         {
+            throw new NotImplementedException();
+        }
+        public static bool BuscarExistencia(int IdBuscado,int cantidad)
+        {
             DataTable dt = new DataTable();
             ConexionDb con = new ConexionDb();
 
-            dt = con.ObtenerDatos(string.Format("Select * from Articulos where ArticuloId=" + IdBuscado + "And Existencia > Cantidad" ));
+            dt = con.ObtenerDatos(string.Format("Select * from Articulos where ArticuloId=" + IdBuscado + "And Existencia >="+cantidad));
             return dt.Rows.Count > 0;
         }
-        
         public override bool Editar()
         {
             throw new NotImplementedException();

@@ -23,6 +23,7 @@
                                 <div class =" input-sm form-control col-xs-3 col-sm-3">
                                     <label for="IdTextBox">Id</label>
                                     <asp:TextBox ID="IdTextBox" runat="server"></asp:TextBox>
+                                    <asp:LinkButton ID="BuscarButton" runat="server" CssClass="btn btn-primary" Width="102px" OnClick="BuscarButton_Click"><span class=" glyphicon glyphicon-search">Buscar</span></asp:LinkButton>
                                 </div>
                             </div>
                             <div class =" form-group">
@@ -34,7 +35,7 @@
                             <div class =" form-group">
                                 <div class =" input-sm form-control col-xs-3 col-sm-3">
                                     <label for="MontoTextBox">Monto:</label>
-                                    <asp:TextBox ID="MontoTextBox" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="MontoTextBox" runat="server" ReadOnly="True"></asp:TextBox>
                                 </div>
                             
                                 
@@ -48,14 +49,14 @@
                                     </tr>
                                     <tr>
                                         <td class="auto-style1">
-                                            <asp:DropDownList ID="ArticuloDropDownList" runat="server" AutoPostBack="True" Height="16px" Width="238px">
+                                            <asp:DropDownList ID="ArticuloDropDownList" runat="server" AutoPostBack="True" Height="16px" Width="238px" ForeColor="Black" OnSelectedIndexChanged="ArticuloDropDownList_SelectedIndexChanged">
                                             </asp:DropDownList>
                                         </td>
                                         <td class="auto-style2">
                                             <asp:TextBox ID="CantidadTextBox" runat="server"></asp:TextBox>
                                         </td>
                                         <td>
-                                            <asp:DropDownList ID="PrecioDropDownList" runat="server" Height="16px" Width="238px">
+                                            <asp:DropDownList ID="PrecioDropDownList" runat="server" Height="16px" Width="238px" ForeColor="Black">
                                             </asp:DropDownList>
                                             <asp:Button ID="AddButton" runat="server" CssClass=" btn btn-primary" Text="Add" OnClick="AddButton_Click" />
                                         </td>
@@ -63,7 +64,18 @@
                                     
                                 </table>
                         </div>
-                        <asp:GridView ID="VentaGridView" runat="server" Width="590px">
+                        <asp:GridView ID="VentaGridView" runat="server" Width="590px" CellPadding="4" ForeColor="#333333" GridLines="None">
+                            <AlternatingRowStyle BackColor="White" />
+                            <EditRowStyle BackColor="#2461BF" />
+                            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                            <RowStyle BackColor="#EFF3FB" />
+                            <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                            <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                            <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                            <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                            <SortedDescendingHeaderStyle BackColor="#4870BE" />
                         </asp:GridView>
                     </div>
                     <div class="panel panel-footer">
