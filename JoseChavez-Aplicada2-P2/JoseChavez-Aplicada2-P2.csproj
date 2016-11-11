@@ -73,7 +73,7 @@
     <Content Include="js\jquery-1.9.1.min.js" />
     <Content Include="js\jquery-2.2.0.min.js" />
     <Content Include="js\toastr.min.js" />
-    <Content Include="Registro\rParcial2.aspx" />
+    <Content Include="Registro\rArticulos.aspx" />
     <Content Include="Registro\rVentas.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -98,12 +98,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Registro\rParcial2.aspx.cs">
-      <DependentUpon>rParcial2.aspx</DependentUpon>
+    <Compile Include="Registro\rArticulos.aspx.cs">
+      <DependentUpon>rArticulos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Registro\rParcial2.aspx.designer.cs">
-      <DependentUpon>rParcial2.aspx</DependentUpon>
+    <Compile Include="Registro\rArticulos.aspx.designer.cs">
+      <DependentUpon>rArticulos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Registro\rVentas.aspx.cs">
       <DependentUpon>rVentas.aspx</DependentUpon>

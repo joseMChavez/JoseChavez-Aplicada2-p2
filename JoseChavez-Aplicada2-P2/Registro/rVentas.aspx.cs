@@ -99,7 +99,6 @@ namespace JoseChavez_Aplicada2_P2
             Ventas venta = new Ventas();
             LlenarDatos(venta);
             bool paso = false;
-            Articulos art = new Articulos();
             try
             {
                 if (string.IsNullOrWhiteSpace(IdTextBox.Text))
@@ -172,7 +171,7 @@ namespace JoseChavez_Aplicada2_P2
                         total = total + Utility.ConvierteFloat(item.Cells[2].Text);
                     }
                     resultado = suma * total;
-                    MontoTextBox.Text = resultado.ToString();
+                    MontoTextBox.Text = resultado.ToString("N2");
                     CantidadTextBox.Text = string.Empty;
                 }
                 else

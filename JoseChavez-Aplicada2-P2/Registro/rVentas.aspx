@@ -22,20 +22,20 @@
                             <div class =" form-group">
                                 <div class =" input-sm form-control col-xs-3 col-sm-3">
                                     <label for="IdTextBox">Id</label>
-                                    <asp:TextBox ID="IdTextBox" runat="server"></asp:TextBox>
-                                    <asp:LinkButton ID="BuscarButton" runat="server" CssClass="btn btn-primary" Width="102px" OnClick="BuscarButton_Click"><span class=" glyphicon glyphicon-search">Buscar</span></asp:LinkButton>
+                                    <asp:TextBox CssClass=" input-sm form-group-sm " ID="IdTextBox" runat="server"></asp:TextBox>
+                                    <asp:LinkButton ID="BuscarButton" runat="server" CssClass="btn btn-info" Width="102px" OnClick="BuscarButton_Click"><span class=" glyphicon glyphicon-search">Buscar</span></asp:LinkButton>
                                 </div>
                             </div>
                             <div class =" form-group">
-                                <div class =" input-sm form-control col-xs-3 col-sm-3">
+                                <div class ="col-xs-3 col-sm-3">
                                     <label for="FechaTextBoxx">Fecha:</label>
-                                    <asp:TextBox ID="FechaTextBox" runat="server" TextMode="Date"></asp:TextBox>
+                                    <asp:TextBox CssClass=" input-sm form-group-sm " ID="FechaTextBox" runat="server" TextMode="Date"></asp:TextBox>
                                 </div>
                             </div>
                             <div class =" form-group">
-                                <div class =" input-sm form-control col-xs-3 col-sm-3">
+                                <div class =" col-xs-3 col-sm-3">
                                     <label for="MontoTextBox">Monto:</label>
-                                    <asp:TextBox ID="MontoTextBox" runat="server" ReadOnly="True"></asp:TextBox>
+                                    <asp:TextBox CssClass=" input-sm form-group-sm " ID="MontoTextBox" runat="server" ReadOnly="True"></asp:TextBox>
                                 </div>
                             
                                 
@@ -53,7 +53,7 @@
                                             </asp:DropDownList>
                                         </td>
                                         <td class="auto-style2">
-                                            <asp:TextBox ID="CantidadTextBox" runat="server"></asp:TextBox>
+                                            <asp:TextBox ID="CantidadTextBox" CssClass=" input-sm form-group-sm " runat="server"></asp:TextBox>
                                         </td>
                                         <td>
                                             <asp:DropDownList ID="PrecioDropDownList" runat="server" Height="16px" Width="238px" ForeColor="Black">
@@ -80,9 +80,9 @@
                     </div>
                     <div class="panel panel-footer">
                         <div class=" container">
-                            <asp:Button ID="NuevoButton" runat="server" Text="Nuevo" OnClick="NuevoButton_Click" />
-                            <asp:Button ID="GuardarButton" runat="server" Text="Guardar" OnClick="GuardarButton_Click" />
-                            <asp:Button ID="EliminarButton" runat="server" Text="Eliminar" OnClick="EliminarButton_Click" />
+                            <asp:Button ID="NuevoButton" runat="server" CssClass="btn btn-info" Text="Nuevo" OnClick="NuevoButton_Click" />
+                            <asp:Button ID="GuardarButton" runat="server" CssClass="btn btn-success" Text="Guardar" OnClick="GuardarButton_Click" />
+                            <asp:Button ID="EliminarButton" runat="server" CssClass="btn btn-danger" Text="Eliminar" OnClick="EliminarButton_Click" />
                         </div>
                     </div>
                 </div>

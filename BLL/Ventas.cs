@@ -83,6 +83,10 @@ namespace BLL
             try
             {
                 retorno = con.Ejecutar(string.Format("Delete from VentasDetalle where Ventaid={0};"+"delete from Ventas where VentaId = {0}",this.VentaId));
+                foreach (VentaDetalle item in Detalle)
+                {
+                    con.Ejecutar(string.Format("update Articulos set Existencia=Existencia +" + item.Cantidad + " where ArticuloId=" + item.ArticuloId));
+                }
             }
             catch (Exception ex)
             {

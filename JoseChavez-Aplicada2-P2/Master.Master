@@ -26,9 +26,9 @@
                     <a class="navbar-brand" href="#">Parcial 2</a>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Registrar</a></li>
-                    <li><a href="#">Consultar</a></li>
+                    <li><a href="/Registro/rArticulos.aspx">Articulos</a></li>
+                    <li><a href="/Registro/rVentas.aspx">Ventas</a></li>
+                    <li><a href="/Consultas/cVentas.aspx">Consultar Ventas</a></li>
                   
                 </ul>
             </div>
